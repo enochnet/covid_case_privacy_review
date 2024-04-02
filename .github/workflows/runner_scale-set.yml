@@ -66,7 +66,7 @@ jobs:
     #  run: Rscript -e "install.packages('lintr')"
        
    # - name: Run lintr
-      run: Rscript -e 'lintr::lint_package()'
+     # run: Rscript -e 'lintr::lint_package()'
       
   #  - name: Run R Script
   #    run: |
