@@ -80,7 +80,7 @@ jobs:
          exit 1
         fi
 
-     - name: Generate SBOM with Syft
+    - name: Generate SBOM with Syft
       run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
       
     - name: Upload SBOM
