@@ -1,0 +1,14 @@
+** using staged installation
+Package libxml-2.0 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libxml-2.0.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libxml-2.0' found
+Package libxml-2.0 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `libxml-2.0.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'libxml-2.0' found
+Warning: Warning: libxml2 include directory not found.
+Warning: Warning: libxml2 library link flags not found.
+GraphML import will not be available.
+Using vendored GLPK
+** libs
