@@ -1,5 +1,4 @@
 # COVID-19 Case Privacy Review
-
 This project contains the procedures used by the Data, Analytics, Visualization Task Force to review and verify that data sets include privacy protection controls and meet the defined k-anonymity and l-diversity thresholds established by the covid response.
 
 ## Issues, questions, problems, suggestions

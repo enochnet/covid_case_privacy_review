@@ -1,15 +1,14 @@
-name: Build and Security Scan
+name: Actions Runner Controller Demo
+on:
+  workflow_dispatch:
 
-on: 
-  push:
-    branches:
-      - main
-      
 jobs:
-  build-and-scan:
-    runs-on: ubuntu-latest
-
+  Explore-GitHub-Actions:
+# You need to use the INSTALLATION_NAME from the previous step
+    runs-on: arc-runner-set
     steps:
+    - run: echo "🎉 This job uses runner scale set runners!"
+    # steps:
     - name: Check out repository
       uses: actions/checkout@v3
 
