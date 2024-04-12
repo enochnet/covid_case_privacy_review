@@ -54,7 +54,6 @@ jobs:
     - name: Install Dependencies
       run: |
         sudo apt-get update
-        sudo apt install -y libcurl4-openssl-dev libharfbuzz-dev libfreetype6-dev 
         Rscript -e "install.packages('textshaping')"
         Rscript -e "install.packages('curl')"
         Rscript -e "install.packages('targets')"
