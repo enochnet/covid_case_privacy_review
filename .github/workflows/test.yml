@@ -13,7 +13,7 @@ jobs:
       run: sudo apt update && sudo apt install -y git
       
     - name: Check out repository
-      run: git clone https://github.com/enochnet/
+      run: git clone https://github.com/enochnet/covid_case_privacy_review
     #  uses: actions/checkout@v3
 
 #    - name: Setting up Python Env
