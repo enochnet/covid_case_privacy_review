@@ -1,7 +1,3 @@
-Run actions/checkout@v3
-Syncing repository: enochnet/covid_case_privacy_review
-Getting Git version info
-Deleting the contents of '/home/runner/_work/covid_case_privacy_review/covid_case_privacy_review'
-The repository will be downloaded using the GitHub REST API
-To create a local Git repository instead, add Git 2.18 or higher to the PATH
-Downloading the archive
+Run git clone https://github.com/enochnet/
+/home/runner/_work/_temp/c4da92e0-0775-4a36-acfb-1b6a715c3137.sh: line 1: git: command not found
+Error: Process completed with exit code 127.
