@@ -1,11 +1,7 @@
-un Rscript -e "renv::restore()"
-Error: Error: This project does not contain a lockfile.
-Have you called `snapshot()` yet?
-Execution halted
-Traceback (most recent calls last):
-5: renv::restore()
-4: lockfile %||% renv_lockfile_load(project = project, strict = TRUE)
-3: renv_lockfile_load(project = project, strict = TRUE)
-2: abort(c("This project does not contain a lockfile.", i = "Have you called `snapshot()` yet?"))
-1: stop(fallback)
-Error: Process completed with exit code 1.
+Run actions/checkout@v3
+Syncing repository: enochnet/covid_case_privacy_review
+Getting Git version info
+Deleting the contents of '/home/runner/_work/covid_case_privacy_review/covid_case_privacy_review'
+The repository will be downloaded using the GitHub REST API
+To create a local Git repository instead, add Git 2.18 or higher to the PATH
+Downloading the archive
