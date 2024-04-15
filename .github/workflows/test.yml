@@ -20,7 +20,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y docker.io
-        sudo systemctl start docker
+        sudo service docker start
 
 #    - name: Setting up Python Env
  #     uses: actions/setup-python@v2
