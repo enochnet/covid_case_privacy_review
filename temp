@@ -1,3 +1,4 @@
-Run git clone https://github.com/enochnet/
-/home/runner/_work/_temp/c4da92e0-0775-4a36-acfb-1b6a715c3137.sh: line 1: git: command not found
-Error: Process completed with exit code 127.
+Run docker run --rm -v /home/runner/_work/covid_case_privacy_review/covid_case_privacy_review:/src anchore/grype /src -o json > grype-output.json
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+Error: Process completed with exit code 125.
