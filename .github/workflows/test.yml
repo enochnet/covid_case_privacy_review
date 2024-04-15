@@ -75,7 +75,7 @@ jobs:
     - name: Run lintr
       run: Rscript -e 'lintr::lint_package()'
 
-    - name: Rrstore project environment
+    - name: Restore project environment
       run: Rscript -e "renv::restore()"  
       working-directory: ${{ github.workspace}} 
       
