@@ -1,11 +1,3 @@
-options(repos = c(
- CRAN = 'https://cloud.r-project.org/'   
-))
-
-if (!requireNamespace("xml2", quietly = TRUE)) {
-  install.packages("xml2")
-}
-
 # Linear Regression
 
 n = 1000
