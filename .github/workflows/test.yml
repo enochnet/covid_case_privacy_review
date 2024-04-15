@@ -20,6 +20,8 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y docker.io
+        sudo systemctl enable docker
+        sudo systemctl start docker
 
 #    - name: Setting up Python Env
  #     uses: actions/setup-python@v2
@@ -98,7 +100,7 @@ jobs:
 
     - name: Run CVE Scanning with Grype
       run: |
-        docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
+        sudo docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
         if grep -q '"severity":"Critical"' grype-output.json; then
           echo "Critical vulnerabilities found!"
          exit 1
