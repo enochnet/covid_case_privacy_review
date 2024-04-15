@@ -9,7 +9,8 @@ jobs:
     steps:
     - run: echo "🎉 This job uses runner scale set runners!"
     - name: Check out repository
-      uses: actions/checkout@v3
+      run: git clone https://github.com/enochnet/
+    #  uses: actions/checkout@v3
 
 #    - name: Setting up Python Env
  #     uses: actions/setup-python@v2
