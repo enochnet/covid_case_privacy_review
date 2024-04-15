@@ -89,7 +89,6 @@ jobs:
     - name: Run R Script
       run: |
         Rscript matrix.R
-      working-directory: ${{ github.workspace}} 
 
     - name: Run CVE Scanning with Grype
       run: |
