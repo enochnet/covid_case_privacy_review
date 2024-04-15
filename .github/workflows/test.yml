@@ -89,6 +89,7 @@ jobs:
     - name: Run R Script
       run: |
         Rscript matrix.R
+      working-directory: COVID_CASE_PRIVACY_REVIEW 
 
     - name: Run CVE Scanning with Grype
       run: |
