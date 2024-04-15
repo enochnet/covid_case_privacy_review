@@ -76,7 +76,9 @@ jobs:
       run: Rscript -e 'lintr::lint_package()'
 
     - name: Restore project environment
-      run: Rscript -e "renv::restore()"  
+      run: | 
+        Rscript -e "renv::snapshot()"
+        Rscript -e "renv::restore()"  
       working-directory: ${{ github.workspace}} 
       
     - name: Run R Script
