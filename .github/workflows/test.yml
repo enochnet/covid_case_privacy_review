@@ -16,6 +16,12 @@ jobs:
       run: git clone https://github.com/enochnet/covid_case_privacy_review
     #  uses: actions/checkout@v3
 
+    - name: Install Docker
+      run: |
+        sudo apt update
+        sudo apt install -y docker.io
+        sudo usermod -aG docker $USER
+
 #    - name: Setting up Python Env
  #     uses: actions/setup-python@v2
  #     with:
