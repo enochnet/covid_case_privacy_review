@@ -31,12 +31,3 @@ COPY --from=builder /app /app
 
 # Run CVE scanning with Grype
 RUN grype /app -o json > /app/grype-output.json
-
-# Stage 3: Generate SBOM
-FROM anchore/syft AS syft
-
-# Copy the built application and project dependencies from Stage 1
-COPY --from=builder /app /app
-
-# Generate SBOM with Syft
-RUN ["syft", "/app", "-o", "json", ">", "/app/sbom.json"]
