@@ -39,4 +39,4 @@ FROM anchore/syft AS syft
 COPY --from=builder /app /app
 
 # Generate SBOM with Syft
-RUN syft /app -o json > /app/sbom.json
+RUN ["syft", "/app", "-o", "json", ">", "/app/sbom.json"]
