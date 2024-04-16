@@ -13,7 +13,11 @@ jobs:
       run: docker build -t r-app-cve-scan .
 
     - name: Tag Docker Image
-      run: docker tag r-app-cve-scan r-app-cve-scan:latest  
+      run: docker tag r-app-cve-scan r-app-cve-scan:latest
+      
+    - name: Generate SBOM with Syft
+      run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
+       
 
     - name: Upload SBOM
       uses: actions/upload-artifact@v2
