@@ -30,4 +30,4 @@ FROM anchore/grype AS grype
 COPY --from=builder /app /app
 
 # Run CVE scanning with Grype
-RUN grype /app -o json > /app/grype-output.json
+RUN ["sh", "-c", "grype /app -o json > /app/grype-output.json"]
