@@ -23,9 +23,6 @@ RUN Rscript -e "install.packages('renv')"
 RUN Rscript -e "renv::snapshot()"
 RUN Rscript -e "renv::restore()"
 
-# Tag the built image
-RUN docker tag builder r-application:latest
-
 # Stage 2: Run CVE scanning
 FROM anchore/grype AS grype
 
