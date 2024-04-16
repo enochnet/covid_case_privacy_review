@@ -1,102 +1,166 @@
-Unpacking apparmor (3.0.4-2ubuntu2.3) ...
-Selecting previously unselected package libip6tc2:arm64.
-Preparing to unpack .../17-libip6tc2_1.8.7-1ubuntu5.2_arm64.deb ...
-Unpacking libip6tc2:arm64 (1.8.7-1ubuntu5.2) ...
-Selecting previously unselected package libnfnetlink0:arm64.
-Preparing to unpack .../18-libnfnetlink0_1.0.1-3build3_arm64.deb ...
-Unpacking libnfnetlink0:arm64 (1.0.1-3build3) ...
-Selecting previously unselected package libnetfilter-conntrack3:arm64.
-Preparing to unpack .../19-libnetfilter-conntrack3_1.0.9-1_arm64.deb ...
-Unpacking libnetfilter-conntrack3:arm64 (1.0.9-1) ...
-Selecting previously unselected package libnftnl11:arm64.
-Preparing to unpack .../20-libnftnl11_1.2.1-1build1_arm64.deb ...
-Unpacking libnftnl11:arm64 (1.2.1-1build1) ...
-Selecting previously unselected package iptables.
-Preparing to unpack .../21-iptables_1.8.7-1ubuntu5.2_arm64.deb ...
-Unpacking iptables (1.8.7-1ubuntu5.2) ...
-Selecting previously unselected package xz-utils.
-Preparing to unpack .../22-xz-utils_5.2.5-2ubuntu1_arm64.deb ...
-Unpacking xz-utils (5.2.5-2ubuntu1) ...
-Selecting previously unselected package bridge-utils.
-Preparing to unpack .../23-bridge-utils_1.7-1ubuntu3_arm64.deb ...
-Unpacking bridge-utils (1.7-1ubuntu3) ...
-Selecting previously unselected package runc.
-Preparing to unpack .../24-runc_1.1.7-0ubuntu1~22.04.2_arm64.deb ...
-Unpacking runc (1.1.7-0ubuntu1~22.04.2) ...
-Selecting previously unselected package containerd.
-Preparing to unpack .../25-containerd_1.7.2-0ubuntu1~22.04.1_arm64.deb ...
-Unpacking containerd (1.7.2-0ubuntu1~22.04.1) ...
-Selecting previously unselected package dns-root-data.
-Preparing to unpack .../26-dns-root-data_2023112702~ubuntu0.22.04.1_all.deb ...
-Unpacking dns-root-data (2023112702~ubuntu0.22.04.1) ...
-Selecting previously unselected package dnsmasq-base.
-Preparing to unpack .../27-dnsmasq-base_2.90-0ubuntu0.22.04.1_arm64.deb ...
-Unpacking dnsmasq-base (2.90-0ubuntu0.22.04.1) ...
-Selecting previously unselected package docker.io.
-Preparing to unpack .../28-docker.io_24.0.5-0ubuntu1~22.04.1_arm64.deb ...
-Unpacking docker.io (24.0.5-0ubuntu1~22.04.1) ...
-Selecting previously unselected package netcat.
-Preparing to unpack .../29-netcat_1.218-4ubuntu1_all.deb ...
-Unpacking netcat (1.218-4ubuntu1) ...
-Selecting previously unselected package ubuntu-fan.
-Preparing to unpack .../30-ubuntu-fan_0.12.16_all.deb ...
-Unpacking ubuntu-fan (0.12.16) ...
-Setting up libip4tc2:arm64 (1.8.7-1ubuntu5.2) ...
-Setting up libapparmor1:arm64 (3.0.4-2ubuntu2.3) ...
-Setting up libip6tc2:arm64 (1.8.7-1ubuntu5.2) ...
-Setting up netcat-openbsd (1.218-4ubuntu1) ...
-update-alternatives: using /bin/nc.openbsd to provide /bin/nc (nc) in auto mode
-update-alternatives: warning: skip creation of /usr/share/man/man1/nc.1.gz because associated file /usr/share/man/man1/nc_openbsd.1.gz (of link group nc) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/netcat.1.gz because associated file /usr/share/man/man1/nc_openbsd.1.gz (of link group nc) doesn't exist
-Setting up netcat (1.218-4ubuntu1) ...
-Setting up libatm1:arm64 (1:2.5.1-4build2) ...
-Setting up runc (1.1.7-0ubuntu1~22.04.2) ...
-Setting up dns-root-data (2023112702~ubuntu0.22.04.1) ...
-Setting up libcap2-bin (1:2.44-1ubuntu0.22.04.1) ...
-Setting up apparmor (3.0.4-2ubuntu2.3) ...
-Setting up libdbus-1-3:arm64 (1.12.20-2ubuntu4.1) ...
-Setting up dbus (1.12.20-2ubuntu4.1) ...
-Setting up xz-utils (5.2.5-2ubuntu1) ...
-update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
-update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
-Setting up libmnl0:arm64 (1.0.4-3build2) ...
-Setting up libxtables12:arm64 (1.8.7-1ubuntu5.2) ...
-Setting up bridge-utils (1.7-1ubuntu3) ...
-Setting up libdevmapper1.02.1:arm64 (2:1.02.175-2.1ubuntu4) ...
-Setting up dmsetup (2:1.02.175-2.1ubuntu4) ...
-Setting up pigz (2.6-1) ...
-Setting up libnfnetlink0:arm64 (1.0.1-3build3) ...
-Setting up containerd (1.7.2-0ubuntu1~22.04.1) ...
-Setting up libelf1:arm64 (0.186-1build1) ...
-Setting up libpam-cap:arm64 (1:2.44-1ubuntu0.22.04.1) ...
-Setting up libnftnl11:arm64 (1.2.1-1build1) ...
-Setting up libnetfilter-conntrack3:arm64 (1.0.9-1) ...
-Setting up libbpf0:arm64 (1:0.5.0-1ubuntu22.04.1) ...
-Setting up iptables (1.8.7-1ubuntu5.2) ...
-update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
-update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
-update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
-update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
-update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
-update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
-Setting up iproute2 (5.15.0-1ubuntu2) ...
-Setting up docker.io (24.0.5-0ubuntu1~22.04.1) ...
-invoke-rc.d: unknown initscript, /etc/init.d/docker not found.
-invoke-rc.d: could not determine current runlevel
-Setting up dnsmasq-base (2.90-0ubuntu0.22.04.1) ...
-Setting up ubuntu-fan (0.12.16) ...
-invoke-rc.d: could not determine current runlevel
-invoke-rc.d: policy-rc.d denied execution of start.
-Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
-Processing triggers for dbus (1.12.20-2ubuntu4.1) ...
-docker: unrecognized service
-Error: Process completed with exit code 1.
+checking: target compiles static binaries... yes
+ checking: host os type... unix
+ checking: host architecture... aarch64
+ checking: target architecture... aarch64
+ checking: host architecture word size... 64
+ checking: target architecture word size... 64
+ checking: project version... 3.7.1
+ checking: project short version... 3.7.1
+=> running post-basechecks project specific checks ...
+ checking: namespace: CLONE_NEWPID... yes
+ checking: namespace: CLONE_FS... yes
+ checking: namespace: CLONE_NEWNS... yes
+ checking: namespace: CLONE_NEWUSER... yes
+ checking: namespace: CLONE_NEWIPC... yes
+ checking: namespace: CLONE_NEWNET... yes
+ checking: namespace: CLONE_NEWUTS... yes
+ checking: namespace: CLONE_NEWCGROUP... yes
+ checking: feature: NO_NEW_PRIVS... yes
+ checking: feature: MS_SLAVE... yes
+ checking: feature: MS_REC... yes
+ checking: feature: MS_PRIVATE... yes
+ checking: user capabilities... yes
+ checking: header linux/securebits.h... yes
+ checking: header linux/capability.h... yes
+ checking: libseccomp+headers... yes
+ checking: cryptsetup... no
+
+unable to find the cryptsetup program, is the package cryptsetup-bin installed?
+
+=> generating fragments ...
+=> building Makefile ...
+=> generating singularity.spec ...
+=> project singularity setup with :
+    - host arch: aarch64
+    - host wordsize: 64-bit
+    - host C compiler: cc
+    - host Go compiler: /usr/local/go/bin/go
+    - host system: unix
+      ---
+    - target arch: aarch64
+    - target wordsize: 64-bit
+    - target C compiler: cc
+      ---
+    - config profile: release
+      ---
+    - SUID install: yes
+    - Network plugins: yes
+      ---
+    - verbose: no
+      ---
+    - cryptsetup: 
+      ---
+    - version: 3.7.1
+=> /go/src/github.com/sylabs/singularity/builddir/Makefile ready, try:
+   $ cd /go/src/github.com/sylabs/singularity/builddir
+   $ make
+ GEN GO DEP /go/src/github.com/sylabs/singularity/builddir/starter.d
+go: downloading github.com/opencontainers/runtime-spec v1.0.3-0.20200710190001-3e4195d92445
+go: downloading golang.org/x/sys v0.0.0-20201117170446-d9b008d0a637
+go: downloading mvdan.cc/sh/v3 v3.2.1
+go: downloading github.com/kr/pty v1.1.8
+go: downloading github.com/sylabs/sif v1.2.1
+go: downloading github.com/containerd/cgroups v0.0.0-20200116170754-a8908713319d
+go: downloading github.com/pelletier/go-toml v1.8.1
+go: downloading github.com/creack/pty v1.1.11
+go: downloading github.com/sylabs/golang-x-crypto v0.0.0-20181006204705-4bce89e8e9a9
+go: downloading github.com/blang/semver v3.5.1+incompatible
+go: downloading github.com/blang/semver/v4 v4.0.0
+go: downloading github.com/seccomp/containers-golang v0.6.0
+go: downloading github.com/satori/go.uuid v1.2.0
+go: downloading github.com/pkg/errors v0.9.1
+go: downloading github.com/opencontainers/selinux v1.8.0
+go: downloading github.com/godbus/dbus v4.1.0+incompatible
+go: downloading github.com/coreos/go-systemd v0.0.0-20190321100706-95778dfbb74e
+go: downloading github.com/docker/go-units v0.4.0
+go: downloading github.com/godbus/dbus/v5 v5.0.3
+go: downloading github.com/coreos/go-systemd/v22 v22.0.0
+go: downloading github.com/containernetworking/cni v0.8.0
+go: downloading golang.org/x/term v0.0.0-20191110171634-ad39bd3f0407
+go: downloading github.com/willf/bitset v1.1.11
+go: downloading github.com/gogo/protobuf v1.3.1
+go: downloading golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
+go: downloading github.com/containernetworking/plugins v0.9.0
+go: downloading github.com/sylabs/scs-key-client v0.6.0
+go: downloading github.com/seccomp/libseccomp-golang v0.9.1
+go: downloading github.com/sylabs/json-resp v0.7.0
+go: downloading github.com/coreos/go-iptables v0.4.5
+go: downloading github.com/vishvananda/netlink v1.1.1-0.20201029203352-d40f9887b852
+go: downloading github.com/safchain/ethtool v0.0.0-20190326074333-42ed695e3de8
+go: downloading github.com/vishvananda/netns v0.0.0-20200728191858-db3c7e526aae
+ GEN GO DEP /go/src/github.com/sylabs/singularity/builddir/singularity.d
+go: downloading github.com/spf13/cobra v1.1.1
+go: downloading github.com/containerd/containerd v1.4.3
+go: downloading github.com/deislabs/oras v0.8.1
+go: downloading github.com/spf13/pflag v1.0.5
+go: downloading github.com/sylabs/scs-library-client v1.0.2
+go: downloading github.com/containers/image/v5 v5.9.0
+go: downloading gopkg.in/yaml.v2 v2.4.0
+go: downloading github.com/go-log/log v0.2.0
+go: downloading github.com/gorilla/websocket v1.4.2
+go: downloading github.com/docker/cli v0.0.0-20200130152716-5d0cf8839492
+go: downloading github.com/apex/log v1.9.0
+go: downloading github.com/opencontainers/umoci v0.4.6
+go: downloading github.com/vbauerster/mpb/v4 v4.12.2
+go: downloading github.com/docker/distribution v2.7.1+incompatible
+go: downloading github.com/sylabs/scs-build-client v0.1.5
+go: downloading github.com/VividCortex/ewma v1.1.1
+go: downloading google.golang.org/grpc v1.27.0
+go: downloading github.com/ghodss/yaml v1.0.0
+go: downloading github.com/opencontainers/go-digest v1.0.0
+go: downloading github.com/containers/storage v1.23.7
+go: downloading github.com/fatih/color v1.10.0
+go: downloading github.com/gorilla/mux v1.7.4
+go: downloading github.com/opencontainers/image-spec v1.0.2-0.20191218002246-9ea04d1f37d7
+go: downloading github.com/docker/go-connections v0.4.0
+go: downloading github.com/docker/docker v1.4.2-0.20200203170920-46ec8731fbce
+go: downloading github.com/docker/docker-credential-helpers v0.6.3
+go: downloading github.com/golang/protobuf v1.4.2
+go: downloading github.com/containers/ocicrypt v1.0.3
+go: downloading github.com/klauspost/compress v1.11.3
+go: downloading github.com/vbatts/go-mtree v0.5.0
+go: downloading github.com/containers/libtrust v0.0.0-20190913040956-14b96171aa3b
+go: downloading google.golang.org/protobuf v1.24.0
+go: downloading github.com/klauspost/pgzip v1.2.5
+go: downloading google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013
+go: downloading github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
+go: downloading github.com/vbauerster/mpb/v5 v5.3.0
+go: downloading github.com/urfave/cli v1.22.4
+go: downloading github.com/sirupsen/logrus v1.7.0
+go: downloading golang.org/x/net v0.0.0-20201021035429-f5854403a974
+go: downloading github.com/mattn/go-isatty v0.0.12
+go: downloading github.com/mattn/go-runewidth v0.0.9
+go: downloading github.com/opencontainers/runc v1.0.0-rc91
+go: downloading github.com/cpuguy83/go-md2man v1.0.10
+go: downloading github.com/ulikunitz/xz v0.5.8
+go: downloading github.com/cpuguy83/go-md2man/v2 v2.0.0
+go: downloading github.com/mattn/go-colorable v0.1.8
+go: downloading gopkg.in/square/go-jose.v2 v2.3.1
+go: downloading github.com/pquerna/ffjson v0.0.0-20190813045741-dac163c6c0a9
+go: downloading github.com/russross/blackfriday v1.5.2
+go: downloading github.com/BurntSushi/toml v0.3.1
+go: downloading github.com/moby/sys/mountinfo v0.4.0
+go: downloading github.com/docker/go-metrics v0.0.1
+go: downloading github.com/russross/blackfriday/v2 v2.0.1
+go: downloading go.mozilla.org/pkcs7 v0.0.0-20200128120323-432b2356ecb1
+go: downloading go.etcd.io/bbolt v1.3.5
+go: downloading github.com/prometheus/client_golang v1.1.0
+go: downloading github.com/cyphar/filepath-securejoin v0.2.2
+go: downloading github.com/rootless-containers/proto v0.1.0
+go: downloading github.com/morikuni/aec v1.0.0
+go: downloading github.com/shurcooL/sanitized_anchor_name v1.0.0
+go: downloading github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4
+go: downloading github.com/prometheus/common v0.6.0
+go: downloading github.com/beorn7/perks v1.0.1
+go: downloading github.com/prometheus/procfs v0.0.5
+go: downloading github.com/matttproud/golang_protobuf_extensions v1.0.1
+ GEN /go/src/github.com/sylabs/singularity/scripts/go-generate
+ GO singularity
+    [+] GO_TAGS "containers_image_openpgp sylog oci_engine singularity_engine fakeroot_engine apparmor selinux seccomp"
+# github.com/sylabs/singularity/cmd/singularity
+/usr/local/go/pkg/tool/linux_arm64/link: running gcc failed: exit status 1
+collect2: fatal error: cannot find 'ld'
+compilation terminated.
+
+make: *** [Makefile:176: singularity] Error 2
+Error: building at STEP "RUN apk update     && apk add --no-cache         ca-certificates         build-base         linux-headers         git         openssl-dev         util-linux-dev         libseccomp-dev         gawk     && mkdir -p $GOPATH/src/github.com/sylabs     && cd $GOPATH/src/github.com/sylabs     && git clone -b v3.7.1 https://github.com/sylabs/singularity.git     && cd $GOPATH/src/github.com/sylabs/singularity     && ./mconfig -s -S -p /opt/singularity     && cd $GOPATH/src/github.com/sylabs/singularity/builddir     && make     && make install": while running runtime: exit status 2
