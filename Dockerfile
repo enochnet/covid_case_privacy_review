@@ -20,6 +20,7 @@ COPY R/renv/activate.R renv/
 
 # Install project dependencies
 RUN Rscript -e "install.packages('renv')"
+RUN Rscript -e "renv::snapshot()"
 RUN Rscript -e "renv::restore()"
 
 # Tag the built image
