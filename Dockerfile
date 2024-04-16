@@ -14,9 +14,9 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copy the R script and dependencies files
-COPY matrix.R ./
-COPY renv.lock ./
-COPY renv/activate.R renv/
+COPY matrix.R ./   
+COPY R/renv.lock ./    
+COPY R/renv/activate.R renv/  
 
 # Install project dependencies
 RUN Rscript -e "install.packages('renv')"
