@@ -10,8 +10,8 @@ jobs:
     - run: echo "🎉 This job uses runner scale set runners!"
           
     - name: Check out repository
-      uses: actions/checkout@v3
-
+      run: git clone https://github.com/enochnet/covid_case_privacy_review
+      
     - name: Build and Scan CVE
       run: docker build -t r-app-cve-scan .
 
