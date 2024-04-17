@@ -1,15 +1,33 @@
-#19 [syft 3/3] RUN syft /app -o json > /app/sbom.json
-#19 0.168 runc run failed: unable to start container process: exec: "/bin/sh": stat /bin/sh: no such file or directory
-#19 ERROR: process "/bin/sh -c syft /app -o json > /app/sbom.json" did not complete successfully: exit code: 1
-------
- > [syft 3/3] RUN syft /app -o json > /app/sbom.json:
-0.168 runc run failed: unable to start container process: exec: "/bin/sh": stat /bin/sh: no such file or directory
-------
-Dockerfile:42
---------------------
-  40 |     
-  41 |     # Generate SBOM with Syft
-  42 | >>> RUN syft /app -o json > /app/sbom.json
---------------------
-ERROR: failed to solve: process "/bin/sh -c syft /app -o json > /app/sbom.json" did not complete successfully: exit code: 1
-Error: Process completed with exit code 1.
+  install: false
+    use: true
+    cleanup: true
+Docker info
+  /usr/bin/docker version
+  Client:
+   Version:           25.0.4
+   API version:       1.44
+   Go version:        go1.21.8
+   Git commit:        1a576c5
+   Built:             Wed Mar  6 16:32:02 2024
+   OS/Arch:           linux/arm64
+   Context:           builders
+  Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+  The process '/usr/bin/docker' failed with exit code 1
+Download buildx from GitHub Releases
+  Use 0.13.1 version spec cache key for v0.13.1
+  Downloading https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-arm64
+  /usr/bin/tar --posix -cf cache.tgz --exclude cache.tgz -P -C /home/runner/_work/covid_case_privacy_review/covid_case_privacy_review --files-from manifest.txt -z
+  Cache Size: ~15 MB (15942957 B)
+  Cache saved successfully
+  Cached to /home/runner/.docker/buildx/.bin/0.13.1/linux-arm64/docker-buildx
+Install buildx
+  Docker plugin mode
+  Fixing perms
+  Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
+Buildx version
+  /usr/bin/docker buildx version
+  github.com/docker/buildx v0.13.1 788433953af10f2a698f5c07611dddce2e08c7a0
+Creating a new builder instance
+  /usr/bin/docker buildx create --name builder-43ec76f9-ddea-4cf6-81c7-8d9c205602bb --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use builders
+  ERROR: failed to initialize builder builder-43ec76f9-ddea-4cf6-81c7-8d9c205602bb (builder-43ec76f9-ddea-4cf6-81c7-8d9c205602bb0): Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Error: The process '/usr/bin/docker' failed with exit code 1
