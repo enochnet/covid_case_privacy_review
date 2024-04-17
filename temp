@@ -1,21 +1,22 @@
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-name: cdc-cluster-installer
-nodes:
-- role: control-plane
-  kubeadmConfigPatches:
-  - |
-    kind: InitConfiguration
-    nodeRegistration:
-      kubeletExtraArgs:
-        node-labels: "ingress-ready=true"
-  extraPortMappings:
-  - containerPort: 80
-    hostPort: 30071
-    protocol: TCP
-  - containerPort: 443
-    hostPort: 30072
-    protocol: TCP
-- role: worker
-- role: worker
-#- role: worker
+Run pip install ./geneflow2
+Processing ./geneflow2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [1 lines of output]
+      error in geneflow setup command: 'python_requires' must be a string containing valid version specifiers; Invalid specifier: '>=3.5.*'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
