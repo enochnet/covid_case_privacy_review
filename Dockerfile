@@ -22,12 +22,3 @@ COPY R/renv/activate.R renv/
 RUN Rscript -e "install.packages('renv')"
 RUN Rscript -e "renv::snapshot()"
 RUN Rscript -e "renv::restore()"
-
-# Stage 2: Run CVE scanning
-FROM anchore/grype AS grype
-
-# Copy the built application and project dependencies from Stage 1
-COPY --from=builder /app /app
-
-# Run CVE scanning with Grype
-RUN ["/bin/sh", "-c", "grype /app -o json > /app/grype-output.json"]
