@@ -1,33 +1,21 @@
-  install: false
-    use: true
-    cleanup: true
-Docker info
-  /usr/bin/docker version
-  Client:
-   Version:           25.0.4
-   API version:       1.44
-   Go version:        go1.21.8
-   Git commit:        1a576c5
-   Built:             Wed Mar  6 16:32:02 2024
-   OS/Arch:           linux/arm64
-   Context:           builders
-  Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
-  The process '/usr/bin/docker' failed with exit code 1
-Download buildx from GitHub Releases
-  Use 0.13.1 version spec cache key for v0.13.1
-  Downloading https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-arm64
-  /usr/bin/tar --posix -cf cache.tgz --exclude cache.tgz -P -C /home/runner/_work/covid_case_privacy_review/covid_case_privacy_review --files-from manifest.txt -z
-  Cache Size: ~15 MB (15942957 B)
-  Cache saved successfully
-  Cached to /home/runner/.docker/buildx/.bin/0.13.1/linux-arm64/docker-buildx
-Install buildx
-  Docker plugin mode
-  Fixing perms
-  Plugin path: /home/runner/.docker/cli-plugins/docker-buildx
-Buildx version
-  /usr/bin/docker buildx version
-  github.com/docker/buildx v0.13.1 788433953af10f2a698f5c07611dddce2e08c7a0
-Creating a new builder instance
-  /usr/bin/docker buildx create --name builder-43ec76f9-ddea-4cf6-81c7-8d9c205602bb --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use builders
-  ERROR: failed to initialize builder builder-43ec76f9-ddea-4cf6-81c7-8d9c205602bb (builder-43ec76f9-ddea-4cf6-81c7-8d9c205602bb0): Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
-Error: The process '/usr/bin/docker' failed with exit code 1
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: cdc-cluster-installer
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 30071
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 30072
+    protocol: TCP
+- role: worker
+- role: worker
+#- role: worker
