@@ -94,14 +94,14 @@ jobs:
 
     - name: Run CVE Scanning with Grype
       run: |
-        podman run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
+        docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
         if grep -q '"severity":"Critical"' grype-output.json; then
           echo "Critical vulnerabilities found!"
          exit 1
         fi
 
     - name: Generate SBOM with Syft
-      run: sudo docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
+      run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
       
     - name: Upload SBOM
       uses: actions/upload-artifact@v2
