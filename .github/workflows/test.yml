@@ -71,6 +71,7 @@ jobs:
           Rscript -e "install.packages('futile.logger')" 
           Rscript -e "install.packages('conflicted')"
           Rscript -e "install.packages('xml2')"
+          sudo apt-get install -y kubectl
         # Add more package installations as needed
         # Rscript -e "install.packages('shiny')"
         # Rscript -e "install.packages('tidyverse')"
@@ -91,11 +92,6 @@ jobs:
         run: |
           Rscript matrix.R
         working-directory: covid_case_privacy_review
-
-      - name: Install podman
-        run: |
-          sudo apt update
-          sudo apt install -y podman  
 
       - name: Start Docker-in-Docker container
         run: |
