@@ -95,7 +95,7 @@ jobs:
       - name: Install kubectl
         run: |
           curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  
-          chomod +x ./kubectl
+          chmod +x ./kubectl
           sudo mv ./kubectl /usr/local/bin/kubectl
 
       - name: Start Docker-in-Docker container
