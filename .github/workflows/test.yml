@@ -98,13 +98,13 @@ jobs:
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-ca:/certs/ca \
                -v some-docker-certs-client:/certs/client \
-               docker:stable-dind
+               docker.io/library/docker:dind
 
       - name: Check Docker Version
         run: podman run --rm --network some-network \
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-client:/certs/client:ro \
-               docker:latest version
+               docker.io/library/docker:latest version
 
       - name: Access Docker CLI Inside DinD
         run: podman run -it --rm --network some-network \
