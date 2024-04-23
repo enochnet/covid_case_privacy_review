@@ -97,27 +97,13 @@ jobs:
           sudo apt update
           sudo apt install -y podman  
 
-      - name: Start Docker-in-Docker
-        run: podman run --privileged --name some-docker -d \
-               --network some-network --network-alias docker \
-               -e DOCKER_TLS_CERTDIR=/certs \
-               -v some-docker-certs-ca:/certs/ca \
-               -v some-docker-certs-client:/certs/client \
-               --mount type=bind,source=/.destination=/mnt,bind-propagation=shared \
-               docker.io/library/docker:dind
+      - name: Start Docker-in-Docker container
+        run: |
+          kubectl create deployment dind  --image=docker:dind
+          kubectl wait --for=condition=available --timeout=60s deployment/dind
+          sleep 5 # wait for the dind container to start
 
-      - name: Check Docker Version
-        run: podman run --rm --network some-network \
-               -e DOCKER_TLS_CERTDIR=/certs \
-               -v some-docker-certs-client:/certs/client:ro \
-               docker.io/library/docker:latest version
-
-      - name: Access Docker CLI Inside DinD
-        run: podman run -it --rm --network some-network \
-               -e DOCKER_TLS_CERTDIR=/certs \
-               -v some-docker-certs-client:/certs/client:ro \
-               docker:latest sh
-
+          
       - name: Run CVE Scanning with Grype
         run: |
           docker exec dind docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
