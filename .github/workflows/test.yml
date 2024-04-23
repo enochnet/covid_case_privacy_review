@@ -93,7 +93,7 @@ jobs:
         working-directory: covid_case_privacy_review
 
       - name: Start Docker-in-Docker
-        run: docker run --privileged --name some-docker -d \
+        run: podman run --privileged --name some-docker -d \
                --network some-network --network-alias docker \
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-ca:/certs/ca \
@@ -101,13 +101,13 @@ jobs:
                docker:stable-dind
 
       - name: Check Docker Version
-        run: docker run --rm --network some-network \
+        run: podman run --rm --network some-network \
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-client:/certs/client:ro \
                docker:latest version
 
       - name: Access Docker CLI Inside DinD
-        run: docker run -it --rm --network some-network \
+        run: podman run -it --rm --network some-network \
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-client:/certs/client:ro \
                docker:latest sh
