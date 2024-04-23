@@ -106,13 +106,11 @@ jobs:
           
       - name: Run CVE Scanning with Grype
         run: |
-          docker exec dind docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
-          if grep -q '"severity":"Critical"' grype-output.json; then
-            echo "Critical vulnerabilities found!"
-            exit 1
-          fi
+          kubectl exec -it deployment/dind --sh -c "docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
+          if grep -q '"severity":"Critical"' grype-output.json; then echo 'Critical vulnerabilities found!' ; exit 1; fi"
+      
       - name: Generate SBOM with Syft
-        run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
+        run: kubectl exec -it deployment/dind -- sh -c "docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json"
       
       - name: Upload SBOM
         uses: actions/upload-artifact@v2
