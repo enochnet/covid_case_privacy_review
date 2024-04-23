@@ -92,6 +92,11 @@ jobs:
           Rscript matrix.R
         working-directory: covid_case_privacy_review
 
+      - name: Install podman
+        run: |
+          sudo apt update
+          sudo apt install -y podman  
+
       - name: Start Docker-in-Docker
         run: podman run --privileged --name some-docker -d \
                --network some-network --network-alias docker \
