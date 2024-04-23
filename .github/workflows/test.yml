@@ -70,12 +70,7 @@ jobs:
           Rscript -e "install.packages('targets')"
           Rscript -e "install.packages('futile.logger')" 
           Rscript -e "install.packages('conflicted')"
-          Rscript -e "install.packages('xml2')"
-          sudo apt-get install -y apt-transport-https gnupg
-          curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-          echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-          sudo apt update 
-          sudo apt-get install -y kubectl
+          Rscript -e "install.packages('xml2')"         
         # Add more package installations as needed
         # Rscript -e "install.packages('shiny')"
         # Rscript -e "install.packages('tidyverse')"
@@ -97,6 +92,12 @@ jobs:
           Rscript matrix.R
         working-directory: covid_case_privacy_review
 
+      - name: Install kubectl
+        run: |
+          curl -LO "https://d1.k8s.io/release/$(curl -L -s https://d1.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  
+          chomod +x ./kubectl
+          sudo mv ./kubectl /usr/local/bin/kubectl
+          
       - name: Start Docker-in-Docker container
         run: |
           kubectl create deployment dind  --image=docker:dind
