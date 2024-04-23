@@ -92,29 +92,25 @@ jobs:
           Rscript matrix.R
         working-directory: covid_case_privacy_review
 
-      - name: Install kubectl
+      - name: Install Docker CLI
         run: |
-          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  
-          chmod +x ./kubectl
-          sudo mv ./kubectl /usr/local/bin/kubectl
+          sudo apt update
+          sudo apt install -y docker.io
 
-      - name: Start Docker-in-Docker container
-        run: |
-          kubectl create deployment dind  --image=docker:dind
-          kubectl wait --for=condition=available --timeout=60s deployment/dind
-          sleep 5 # wait for the dind container to start
-
-          
       - name: Run CVE Scanning with Grype
         run: |
-          kubectl exec -it deployment/dind --sh -c "docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
-          if grep -q '"severity":"Critical"' grype-output.json; then echo 'Critical vulnerabilities found!' ; exit 1; fi"
-      
+            docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
+            if grep -q '"severity":"Critical"' grype-output.json; then
+              echo "Critical vulnerabilities found!"
+             exit 1
+            fi
+    
       - name: Generate SBOM with Syft
-        run: kubectl exec -it deployment/dind -- sh -c "docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json"
-      
+        run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
+          
       - name: Upload SBOM
         uses: actions/upload-artifact@v2
         with:
           name: sbom
           path: sbom.json
+    
