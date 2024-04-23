@@ -94,10 +94,10 @@ jobs:
 
       - name: Install kubectl
         run: |
-          curl -LO "https://d1.k8s.io/release/$(curl -L -s https://d1.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  
+          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  
           chomod +x ./kubectl
           sudo mv ./kubectl /usr/local/bin/kubectl
-          
+
       - name: Start Docker-in-Docker container
         run: |
           kubectl create deployment dind  --image=docker:dind
