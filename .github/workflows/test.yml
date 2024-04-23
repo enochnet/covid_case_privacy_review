@@ -103,6 +103,7 @@ jobs:
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-ca:/certs/ca \
                -v some-docker-certs-client:/certs/client \
+               --mount type=bind,source=/.destination=/mnt,bind-propagation=shared \
                docker.io/library/docker:dind
 
       - name: Check Docker Version
