@@ -98,7 +98,7 @@ jobs:
                -e DOCKER_TLS_CERTDIR=/certs \
                -v some-docker-certs-ca:/certs/ca \
                -v some-docker-certs-client:/certs/client \
-               docker:dind
+               docker:stable-dind
 
       - name: Check Docker Version
         run: docker run --rm --network some-network \
