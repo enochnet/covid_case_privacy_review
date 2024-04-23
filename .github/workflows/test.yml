@@ -6,9 +6,6 @@ jobs:
   Explore-GitHub-Actions:
 # You need to use the INSTALLATION_NAME from the previous step
     runs-on: arc-runner-set
-    container:
-      image: docker:stable-dind
-      options: --privileged
     
     steps:
       - run: echo "🎉 This job uses runner scale set runners!"
@@ -95,14 +92,16 @@ jobs:
           Rscript matrix.R
         working-directory: covid_case_privacy_review
 
+      - name: Start Docker-in-Docker
+        run: docker run --privileged --name dind -d docker:stable-dind  
+
       - name: Run CVE Scanning with Grype
         run: |
-          docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
+          docker exec dind docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
           if grep -q '"severity":"Critical"' grype-output.json; then
             echo "Critical vulnerabilities found!"
             exit 1
           fi
-
       - name: Generate SBOM with Syft
         run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
       

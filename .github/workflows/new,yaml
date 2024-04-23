@@ -1,7 +1,6 @@
 name: Actions Runner Controller testnew
 on:
   workflow_dispatch:
-
 jobs:
   Explore-GitHub-Actions:
     runs-on: arc-runner-set
