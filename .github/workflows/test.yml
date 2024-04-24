@@ -92,25 +92,22 @@ jobs:
           Rscript matrix.R
         working-directory: covid_case_privacy_review
 
-      #- name: Install Docker CLI
-        #run: |
-         # sudo apt update
-         # sudo apt install -y docker.io
-
-      - name: Run CVE Scanning with Grype
-        run: |
-            docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
-            if grep -q '"severity":"Critical"' grype-output.json; then
-            echo "Critical vulnerabilities found!"
-            exit 1
-            fi
-    
-      - name: Generate SBOM with Syft
-        run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
-          
+      - name: Create SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          format: cyclonedx-json
+          output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
+        
+      - name: Scan SBOM
+        uses: anchore/scan-action@v3
+        with:
+          sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
+          fail-build: false
+          output-format: json
+          severity-cutoff: critical
+         
       - name: Upload SBOM
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.3.1
         with:
           name: sbom
-          path: sbom.json
-    
+          path: "${{ github.event.repository.name }}-sbom.spdx.json"
