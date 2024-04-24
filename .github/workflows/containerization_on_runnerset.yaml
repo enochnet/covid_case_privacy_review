@@ -19,12 +19,22 @@ jobs:
     - name: Tag Docker Image
       run: docker tag r-app-cve-scan r-app-cve-scan:latest
       
-    - name: Generate SBOM with Syft
-      run: docker run --rm -v ${{github.workspace}}:/src anchore/syft /src -o json > sbom.json
+    - name: Create SBOM
+      uses: anchore/sbom-action@v0
+      with:
+        format: cyclonedx-json
+        output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
+      
+    - name: Scan SBOM
+      uses: anchore/scan-action@v3
+      with:
+        sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
+        fail-build: false
+        output-format: json
+        severity-cutoff: critical
        
-
     - name: Upload SBOM
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4.3.1
       with:
         name: sbom
-        path: ./sbom.json
+        path: "${{ github.event.repository.name }}-sbom.spdx.json"
