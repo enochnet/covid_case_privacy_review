@@ -92,17 +92,17 @@ jobs:
           Rscript matrix.R
         working-directory: covid_case_privacy_review
 
-      - name: Install Docker CLI
-        run: |
-          sudo apt update
-          sudo apt install -y docker.io
+      #- name: Install Docker CLI
+        #run: |
+         # sudo apt update
+         # sudo apt install -y docker.io
 
       - name: Run CVE Scanning with Grype
         run: |
             docker run --rm -v ${{github.workspace}}:/src anchore/grype /src -o json > grype-output.json
             if grep -q '"severity":"Critical"' grype-output.json; then
-              echo "Critical vulnerabilities found!"
-             exit 1
+            echo "Critical vulnerabilities found!"
+            exit 1
             fi
     
       - name: Generate SBOM with Syft
